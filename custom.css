@@ -15,33 +15,29 @@ limitations under the License.
 */
 
 :root {
-   /* Modify these to change your theme colors: */
-   --primary: #09F;
-   --text: #DDD;
-   --background: #111;
-   --background-elevated: #222;
+      /* Modify these to change your theme colors: */
+      --primary: #61AFEF;
+      --text: #AFBAD4;
+      --background: #1f1f26;
+      --background-elevated: #2b2d3a;
 
-   /* These should be less important: */
-   --background-hover: rgba(255, 255, 255, 0.1);
-   --background-light: #AAA;
-   --background-bright: #FFF;
+      /* These should be less important: */
+      --background-hover: #434350;
+      --background-light: #AAA;
+      --background-bright: #FFF;
 
-   --border-dim: #666;
-   --border-bright: var(--primary);
+      --border-dim: #2b2d3a;
+      --border-bright: #0ACE9E;
 
-   --text-bright: #FFF;
-   --text-special: var(--primary);
+      --text-bright: #FFF;
+      --text-special: #0ACE9E;
 
-   --scrollbar-background: #000;
-   --scrollbar-border: var(--primary);
+      --scrollbar-background: #1f1f26;
+      --scrollbar-border: #2b2d3a;
 }
 
 h1, h2, h3, h4 {
   color: var(--text);
-}
-
-.popover_mask {
-   background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Team Picker */
@@ -50,6 +46,13 @@ h1, h2, h3, h4 {
    box-shadow: var(--background) 1px 1px 25px;
    color: var(--text);
    z-index: 1;
+}
+
+::selection {
+  background: #0ACE9E; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
 }
 
 
@@ -95,17 +98,16 @@ body:not(.loading) #team_menu:active {
 }
 
 /*broken*/
-__TODO-highlight-indicator {
-   background-color: var(--border-bright) !important;
+highlight-indicator {
+   background-color: var(--background) !important;
    opacity: 1;
 }
 
 #msgs_scroller_div::-webkit-scrollbar-track, .client_container,
 #search_terms, #footer, ts-message, .channel_header, ts-jumper ts-jumper-container,
 ts-jumper input[type="text"],
-.supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track,
-#channel_header_info, #channel_topic_text, #channel_topic_text code, #edit_topic_inner:before {
-  background: var(--background) !important;
+.supports_custom_scrollbar:not(.slim_scrollbar) #col_channels:hover #channels_scroller::-webkit-scrollbar-track{
+  background: var(--background)  !important;
 }
 
 .channel_header, #col_messages, #footer {
@@ -113,8 +115,7 @@ ts-jumper input[type="text"],
 }
 
 /* channel list */
-.p-channel_sidebar__channel,
-.p-channel_sidebar__link {
+.p-channel_sidebar__channel {
   border-radius: 0 15px 15px 0;
   height: 24px !important;
 }
@@ -138,7 +139,7 @@ ts-jumper input[type="text"],
 .p-channel_sidebar__link--selected:hover {
    background-color: var(--background) !important;
    border: solid var(--border-bright);
-   border-width: 1px 1px 1px 0;
+   border-width: 2px 2px 2px 0;
 }
 
 .p-channel_sidebar__channel:hover,
@@ -189,8 +190,8 @@ li.active[class] span,
 .p-channel_sidebar__badge,
 .p-channel_sidebar__banner--mentions {
    /*inverted because important*/
-   background-color: var(--border-bright) !important;
-   border-color: var(--text-bright);
+   background-color: var(--border-elevated) !important;
+   border-color: var(--border-bright);
    color: var(--text-bright);
 }
 
@@ -201,8 +202,7 @@ li.active[class] span,
 
 /* new scrollbar */
 .p-channel_sidebar div.c-custom_scrollbar__thumb_vertical, .p-channel_sidebar div.c-scrollbar__bar {
-  background: var(--background-elevated);
-  border: 1px solid var(--scrollbar-border);
+  background: var(--background-elevated);  
 }
 
 #channels_scroller.show_which_channel_is_active[class] li.active .presence.active i.presence_icon,
@@ -237,30 +237,25 @@ ts-jumper input[type="text"]::-webkit-input-placeholder {
   border-color: var(--border-dim) !important;
 }
 
-.day_divider .day_divider_label,
+.day_container .day_divider .day_divider_label, .day_divider .day_divider_label,
 #convo_container .convo_flexpane_divider .reply_count {
   color: var(--text) !important;
-  background-color: var(--background) !important;
-  border: 1px solid var(--border-bright) !important;
-  border-radius: 1rem;
+  background-color: var(--background);
+  border: 30px solid var(--border-bright);
+  border-radius: px;
 }
-
-.mention_day_container_div .day_divider .day_divider_label {
-   border: 1px solid var(--border-dim) !important;
-}
-
 #convo_container .convo_flexpane_divider .reply_count {
    border-radius: 10px;
    padding: 0px 10px;
 }
 
 .mention_day_container_div .day_divider:before {
-   background-color: transparent !important;
-   border-color: var(--border-dim);
+   background-color: var(--background);
 }
 
 .day_container .day_msgs {
-  border-top: 1px solid var(--border-bright) !important;
+  border-top: 2px solid var(--border-dim) !important;
+  background-color: var(--background);
   padding-right: 10px;
   padding-left: 2px;
 }
@@ -279,10 +274,11 @@ ts-message {
    border-radius: 5px;
    margin: 1px 5px !important;
    box-shadow: none !important;
+   background-color: var(--background);
 }
 
 ts-message:hover {
-   background: var(--background-hover) !important;
+   background: var(--background) !important;
 }
 
 #messages_container::after {
@@ -310,22 +306,16 @@ ts-message .action_hover_container .btn_msg_action,
 .file_container .CodeMirror .CodeMirror-code>div:before, .file_container .CodeMirror .sssh-line:before, .file_container .sssh-code .CodeMirror-code>div:before, .file_container .sssh-code .sssh-line:before,
 #col_flex,
 .search_message_result,
+#flex_contents .heading,
+#flex_contents .heading a,
+#flex_contents .subheading,
 .search_result_with_extract,
 #search_filters a,
 .menu,
 .menu #menu_items_scroller,
 .btn, .btn_outline {
   background: var(--background-elevated) !important;
-}
-
-
-#flex_contents .heading,
-#flex_contents .heading a,
-#flex_contents .heading_text,
-#flex_contents .subheading {
-   background: var(--background) !important;
-   color: var(--text) !important;
-   border-color: var(--border-dim);
+  color: var(--scrollbar-border);
 }
 
 pre,
@@ -337,7 +327,7 @@ ts-message .action_hover_container .btn_msg_action,
 #flex_contents .subheading,
 #search_filters.files #filter_files, #search_filters.messages #filter_messages,
 .menu ul li a,
-.btn, .btn_outline, .menu {
+.btn, .btn_outline{
   color: var(--text) !important;
   border-color: var(--border-dim) !important;
 }
@@ -394,11 +384,10 @@ ts-message .action_hover_container .btn_msg_action,
    border-color: var(--background-elevated);
 }
 
-.feature_name_tagging_client ts-message .mention, ts-message .mention,
+.comment .mention, .feature_name_tagging_client .comment .mention, .feature_name_tagging_client ts-message .mention, ts-message .mention,
 span.match {
-  border: 1px solid var(--border-bright) !important;
-  background-color: var(--background-elevated) !important;
-  font-weight: bold;
+  border: 1px solid var(--border-bright);
+  background-color: var(--background);
   padding: 2px 4px;
   margin: 2px;
   border-radius: 10px;
@@ -407,21 +396,6 @@ span.match {
 .mention > .mention {
    /* I'm assuming this is a Slack bug */
    border: none;
-}
-
-.mention_rxn {
-   border-radius: 5px;
-   margin: 1px 5px;
-}
-
-.mention_rxn .mention_rxn_summary .app_preview_link,
-.mention_rxn .mention_rxn_summary .member_preview_link,
-.mention_rxn .mention_rxn_summary .mention_rxn_summary_members {
-   color: var(--text);
-}
-
-#member_mentions h3 a {
-   color: var(--text-special);
 }
 
 pre.special_formatting{
@@ -477,8 +451,7 @@ ts-message a.timestamp{
   color: #fff !important;
 }
 
-#msgs_div .unread_divider.no_unreads .divider_label
-{
+#msgs_div .unread_divider.no_unreads .divider_label{
  background: #000 !important;
  color: #aaa !important;
 }
@@ -534,14 +507,6 @@ ts-message a.timestamp{
    background-color: var(--background) !important;
 }
 
-/* user profile popup */
-#member_preview_scroller, #member_preview_web_container,
-.menu_member_header, .menu_member_footer {
-   background-color: var(--background-elevated);
-   border-color: var(--border-dim);
-   color: var(--text);
-}
-
 /* user mentions for other people */
 .app_preview_link_slug.ts_tip,
 .internal_member_link.ts_tip,
@@ -551,9 +516,6 @@ ts-mention.ts_tip
    color: var(--text-bright);
    background: var(--background-elevated);
    border: 1px solid var(--border-dim);
-   padding: 2px 4px;
-   margin: 2px;
-   border-radius: 10px;
 }
 .app_preview_link_slug.ts_tip:hover,
 .internal_member_link.ts_tip:hover,
@@ -581,21 +543,15 @@ ts-mention.ts_tip:hover
 }
 
 .rxn .emoji-sizer {
-  background-color: transparent !important;
+  background-color: #2b2d3a;
   border-radius: 7px;
   width: 24px;
   height: 24px;
-  margin: 0 0 0 -2px !important;
-  border: 1px solid transparent; /* looks silly but it makes the outline work */
 }
 
 .emoji-sizer {
    /* outline for black-on-transparent emojis */
-   -webkit-filter: drop-shadow( 1px  0 0 var(--background-bright))
-                   drop-shadow(-1px  0 0 var(--background-bright))
-                   drop-shadow(-0  1px 0 var(--background-bright))
-                   drop-shadow( 0 -1px 0 var(--background-bright));
-   margin: 0 !important;
+   
 }
 
 .ts_icon.ts_icon_smile_o {
@@ -611,39 +567,11 @@ ts-mention.ts_tip:hover
 
 .menu .p-emoji_picker__input_container,
 .menu .p-emoji_picker__list_container,
-.menu .p-emoji_picker__heading,
-.menu .p-emoji_picker__footer {
+.menu .p-emoji_picker__heading {
    background: transparent;
    color: var(--text);
 }
 
-.p-emoji_picker__group_tab {
-   border: 1px solid transparent;
-   border-bottom-width: 2px;
-}
-
-.menu .p-emoji_picker__group_tab--active {
-   background-color: var(--background);
-   color: var(--text-special);
-   border-color: var(--border-bright);
-   border-width: 1px 1px 2px 1px;
-   border-style: solid;
-}
-.p-emoji_picker__group_tab:hover {
-   background-color: var(--background-elevated);
-   border-color: var(--border-dim);
-}
-.p-emoji_picker__group_tab .emoji-sizer {
-   filter: none;
-   -webkit-filter: none;
-}
-.p-emoji_picker__group_tab:hover .emoji-sizer {
-   color: var(--text);
-}
-.p-emoji_picker__preview_text {
-   background-color: var(--bacground-elevated);
-   color: var(--text);
-}
 
 #emoji_menu h3, #emoji_menu #emoji_preview_text {
    background-color: var(--background-elevated);
@@ -662,9 +590,7 @@ ts-mention.ts_tip:hover
 }
 
 .light_theme .emoji-only {
-   line-height: 3rem;
-   font-size: 3rem;
-   margin-top: 3px !important;
+
 }
 
 /* menus */
@@ -721,12 +647,6 @@ ts-message .reply_bar:hover {
 #sli_recap_toggle.active, #stars_toggle.active {
   background-color: var(--background-elevated);
   border: 1px solid var(--border-bright);
-  color: var(--border-bright);
-}
-
-.star_item,
-.current_status_input_for_team_menu .current_status_presets {
-   border-color: var(--border-dim);
 }
 
 #archives_return, .messages_banner {
@@ -736,35 +656,6 @@ ts-message .reply_bar:hover {
    border-bottom: 0px;
    border-radius: 10px 10px 0 0;
 }
-
-#threads_msgs_scroller_div, ts-thread {
-   background-color: var(--background);
-}
-
-ts-thread .thread_header .thread_channel_name a {
-   color: var(--text-special);
-}
-
-#convo_tab .thread_participants, ts-thread .thread_participants {
-   color: var(--text);
-}
-
-ts-thread .thread_messages,
-.reply_input_container .ql-container {
-   background-color: var(--background);
-   border-color: var(--border-dim);
-}
-
-#threads_msgs_scroller_div ts-thread ts-message {
-   margin: 0 !important;
-   border-radius: 10px;
-}
-
-ts-thread .collapse_inline_thread_container:hover,
-ts-thread .view_all_replies_container:hover {
-   background-color: var(--background-elevated);
-}
-
 
 /* preferences page */
 #fs_modal, .modal, .modal-header, .modal-footer {
@@ -780,9 +671,11 @@ ts-thread .view_all_replies_container:hover {
 
 #fs_modal .fs_modal_file_viewer_header {
    background: transparent;
+   color: var(--text);
 }
 #fs_modal .fs_modal_file_viewer_content .viewer {
    background: var(--background);
+   color: var(--text);
 }
 .fs_modal_file_viewer_header .control_btn {
    color: var(--text) !important;
@@ -790,7 +683,7 @@ ts-thread .view_all_replies_container:hover {
 
 .section_rollup:hover:not(.is_active) {
    background: var(--background-hover);
-   color: inherit;
+   color: var(--text);
 }
 
 #fs_modal #fs_modal_sidebar a {
@@ -798,65 +691,17 @@ ts-thread .view_all_replies_container:hover {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.01);
   border-radius: 10px;
+  color: var(--text);
 }
 
 #fs_modal #fs_modal_sidebar a:hover {
   border-color: var(--border-dim);
+  color: var(--text);
 }
 
 #fs_modal #fs_modal_sidebar a.is_active {
   border-color: var(--border-bright);
-}
-
-
-#threads_msgs_scroller_div .threads_caught_up_divider .divider_line,
-#threads_msgs_scroller_div .threads_caught_up_divider .divider_label {
-   background-color: var(--background-elevated);
-   border: 1px solid var(--border-dim);
-   color: var(--text);
-}
-
-/* unreads */
-.unread_empty_state {
-   color: var(--text);
-}
-
-.unread_group_header,
-.sli_briefing, .sli_briefing__header, .sli_briefing__title,
-.sli_briefing_view__footer_title, .bottom_mark_all_read {
-   background-color: var(--background);
-   color: var(--text);
-   border-color: var(--border-dim);
-}
-.unread_group_header button {
-   color: var(--text-special);
-},
-
-
-/* scroller for threads & unreads */
-#threads_msgs_scroller_div:not(.loading):before {
-   background: var(--background);
-}
-
-/* putting this on so many elements might cause performance issues but #yolo */
-div::-webkit-scrollbar-track {
-  display: none !important;
-}
-div::-webkit-scrollbar-thumb {
-   color: transparent !important;
-   border: 1px solid var(--scrollbar-border) !important;
-   background-color: transparent !important;
-}
-
-#threads_msgs_scroller_div:not(.loading):before {
-   background: none;
-}
-
-/* thread side panel */
-
-#mentions_scroller {
-   background: var(--background) !important;
-   color: var(--text) !important;
+  color: var(--text);
 }
 
 
@@ -873,7 +718,7 @@ div::-webkit-scrollbar-thumb {
 
 /* CodeMirror syntax highlighting */
 .cm-s-default .cm-header {color: #66f}
-.cm-s-default .cm-quote {color: #0f0}
+.cm-s-default .cm-quote {color: #66f}
 .cm-negative {color: #f44}
 .cm-positive {color: #2f2}
 .cm-s-default .cm-keyword {color: #f0a}
@@ -932,14 +777,13 @@ select {
 }
 
 .lfs_list::-webkit-scrollbar-thumb {
-   color: transparent !important;
-   border: 1px solid var(--scrollbar-border) !important;
+   color: transparent !important;   
    background-color: transparent !important;
 }
 
 /* profile */
 #fs_modal #fs_modal_footer {
-   background-color:var(--background-elevated)
+   background-color:var(--background);
 }
 
 #contents_container::-webkit-scrollbar-track {
@@ -947,7 +791,7 @@ select {
 }
 
 #contents_container::-webkit-scrollbar-thumb {
-   color: transparent !important;
+   color: var(--background);
    border: 1px solid var(--scrollbar-border) !important;
    background-color: transparent !important;
 }
@@ -955,10 +799,6 @@ select {
 /* scroll border fix */
 .client_channels_list_container {
    border-right: none;
-}
-
-.flex_pane_showing #col_flex {
-   border-color: var(--border-dim);
 }
 
 /* setting menu fix */
